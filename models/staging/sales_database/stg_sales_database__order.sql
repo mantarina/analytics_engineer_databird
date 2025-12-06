@@ -1,7 +1,7 @@
 select
     order_id,
     1 AS colonne_1,
-    user_name,
+    user_name AS user_id,
     order_status,
     DATETIME(order_date, "Europe/Paris") AS order_created_at,
     DATETIME(order_approved_date, "Europe/Paris") AS order_approved_at,
