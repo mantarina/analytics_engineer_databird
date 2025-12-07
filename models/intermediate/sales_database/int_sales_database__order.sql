@@ -3,8 +3,8 @@ with order_item_grouped_by_order as (
 select order_id,
     user_id,
     order_status,
-    order_created_at,
-    order_approved_at,
+    order_created_at_x,
+    order_approved_at_x,
     sum(total_order_item_amount) as total_order_amount,
     sum(item_quantity) as total_items,
     count(distinct product_id) as total_distinct_items
@@ -12,8 +12,8 @@ from {{ ref('int_sales_database__order_item') }}
 group by order_id,
     user_id,
     order_status,
-    order_created_at,
-    order_approved_at
+    order_created_at_x,
+    order_approved_at_x
 
 ), feedback_grouped_by_order as (
 
@@ -30,8 +30,8 @@ select oi.order_id,
     oi.order_status,
     u.user_city,
     u.user_state,
-    oi.order_created_at,
-    oi.order_approved_at,
+    oi.order_created_at_x,
+    oi.order_approved_at_x,
     coalesce(f.sum_feedback_score,0) as sum_feedback_score,
     coalesce(f.total_feedbacks,0) as total_feedbacks,
     coalesce(oi.total_order_amount,0) as total_order_amount,
