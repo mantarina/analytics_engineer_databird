@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_local_bike__product_category
+    description: "intermediate view to create a join between a product and its category as well as the product and its brand"
