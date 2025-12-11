@@ -6,6 +6,7 @@ select
     quantity AS item_quantity,
     list_price AS item_price,
     discount,
+    ROUND((quantity * list_price), 2) AS off_discount_total_order_amount,
     ROUND((quantity * list_price) * coalesce((1-discount), 1),2) total_order_item_amount
 
 from {{ source('local_bike', 'order_items') }}
