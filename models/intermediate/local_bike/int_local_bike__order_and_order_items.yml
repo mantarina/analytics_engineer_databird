@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: int_local_bike__order_and_order_items
+    description: "intermediate view to create a join between order and order_items"
+    columns:
+      - name: discount_amount
+        description: "calculated field to calculate the total discount amount : off_discount_total_order_amount - total_order_item_amount."

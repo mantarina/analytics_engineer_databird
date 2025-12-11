@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: mrt_local_bike__customer_buying_profile
+    description: '{{ doc("mrt_local_bike__customer_buying_profile") }}'

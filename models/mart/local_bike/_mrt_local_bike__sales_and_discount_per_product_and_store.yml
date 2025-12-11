@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: mrt_local_bike__sales_and_discount_per_product_and_store
+    description: '{{ doc("mrt_local_bike__sales_and_discount_per_product_and_store") }}'
